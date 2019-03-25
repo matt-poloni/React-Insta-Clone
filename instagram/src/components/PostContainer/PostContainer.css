@@ -1,0 +1,10 @@
+.post {
+  text-align: left;
+}
+
+.post img {
+  width: 2em;
+  height: auto;
+  border-radius: 50%;
+  margin: 1em;
+}
