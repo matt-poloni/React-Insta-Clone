@@ -17,7 +17,9 @@ class App extends Component {
       <div className="App">
         <SearchBar />
         <main className="wrap-posts">
-          <PostContainer />
+          {this.state.posts.map(post =>
+            <PostContainer key={post.id} post={post} />
+          )}
         </main>
       </div>
     );
