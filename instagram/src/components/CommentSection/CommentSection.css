@@ -1,0 +1,6 @@
+.post-comments {}
+
+.post-comments .comment-user {
+  display: inline-block;
+  margin-right: 0.5em;
+}

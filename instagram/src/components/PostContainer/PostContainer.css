@@ -4,6 +4,12 @@
   border-radius: 0.5rem;
 }
 
+.post a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .post .user-thumb {
   width: 2em;
   height: auto;
