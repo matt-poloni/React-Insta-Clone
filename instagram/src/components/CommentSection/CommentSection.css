@@ -1,6 +1,14 @@
-.post-comments {}
+.post-comments {
+  width: 100%;
+}
 
 .post-comments .comment-user {
   display: inline-block;
   margin-right: 0.5em;
+}
+
+.post-comments .add-comment {
+  width: 100%;
+  border: 0;
+  font-size: 1.4rem;
 }
