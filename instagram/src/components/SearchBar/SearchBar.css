@@ -4,9 +4,12 @@
   align-items: center;
   padding: 1rem 2rem;
   font-size: 2.8rem;
+  width: 100%;
 }
 
 .wrap-searchbar .logo-ig {
+  display: flex;
+  align-items: center;
   cursor: pointer;
 }
 
@@ -14,7 +17,15 @@
   font-family: sans-serif;
 }
 
-.wrap-searchbar .search {}
+.wrap-searchbar .search {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-searchbar .search input {
+  text-align: center;
+  font-size: 1.4rem;
+}
 
 .wrap-searchbar .nav-site i {
   margin: 0.5em;

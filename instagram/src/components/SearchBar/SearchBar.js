@@ -1,6 +1,6 @@
 import React from 'react';
 import './SearchBar.css';
-import { Form, Input, FormText } from 'reactstrap';
+import { Form, Input } from 'reactstrap';
 
 const SearchBar = props => {
   return (
@@ -10,7 +10,7 @@ const SearchBar = props => {
         <span className="wordmark-ig"> | Instagram</span>
       </div>
       <div className="search">
-        <Form>
+        <Form inline>
           <Input type="text" id="searchbar" placeholder="Search" bsSize="lg" />
         </Form>
       </div>
