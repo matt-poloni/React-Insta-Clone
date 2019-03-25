@@ -15,3 +15,13 @@
   width: 100%;
   height: auto;
 }
+
+.post .post-interact {
+  margin: 0.5em 0.25em;
+  display: flex;
+  flex-direction: column;
+}
+
+.post .post-interact i {
+  margin: 0.5em 0.25em;
+}
