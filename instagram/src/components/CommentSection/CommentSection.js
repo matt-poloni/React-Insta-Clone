@@ -1,5 +1,6 @@
 import React from 'react';
 import './CommentSection.css';
+import Comment from './Comment';
 import PropTypes from 'prop-types';
 import { Form, Input } from 'reactstrap';
 
@@ -7,12 +8,9 @@ const CommentSection = props => {
   const comments = props.comments;
 
   return (
-    <div className="post-comments test">
+    <div className="post-comments">
       {comments.map(comment =>
-        <p key={comment.id}>
-          <a href="#" className="comment-user">{comment.username}</a>
-          {comment.text}
-        </p>
+        <Comment key={comment.id} comment={comment} />
       )}
       <p className="post-time">{props.timestamp}</p>
       <div className="wrap-add-comment">
