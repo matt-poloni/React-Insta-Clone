@@ -1,0 +1,22 @@
+.wrap-searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 2.8rem;
+}
+
+.wrap-searchbar .logo-ig {
+  cursor: pointer;
+}
+
+.wrap-searchbar .wordmark-ig {
+  font-family: sans-serif;
+}
+
+.wrap-searchbar .search {}
+
+.wrap-searchbar .nav-site i {
+  margin: 0.5em;
+  cursor: pointer;
+}
