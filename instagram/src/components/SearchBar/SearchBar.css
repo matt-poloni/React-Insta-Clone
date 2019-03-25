@@ -8,13 +8,10 @@
 }
 
 .wrap-searchbar .logo-ig {
+  font-family: 'Lobster Two', cursive;
   display: flex;
   align-items: center;
   cursor: pointer;
-}
-
-.wrap-searchbar .wordmark-ig {
-  font-family: sans-serif;
 }
 
 .wrap-searchbar .search {

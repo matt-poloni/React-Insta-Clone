@@ -8,7 +8,7 @@
 main.wrap-posts {
   display: flex;
   flex-direction: column;
-  width: 60rem;
+  max-width: 60rem;
 }
 
 .test {
