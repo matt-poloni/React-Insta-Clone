@@ -10,7 +10,7 @@ const PostContainer = props => {
     <article className="post">
       <div className="post-header">
         <img className="user-thumb" src={post.thumbnailUrl} alt={post.username} />
-        <span className="username">{post.username}</span>
+        <a href="#" className="username">{post.username}</a>
       </div>
       <div className="post-img">
         <img src={post.imageUrl} alt='' />
@@ -35,13 +35,7 @@ PostContainer.propTypes = {
     imageUrl: PropTypes.string,
     likes: PropTypes.number,
     timestamp: PropTypes.string,
-    comments: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        username: PropTypes.string,
-        text: PropTypes.string,
-      }),
-    )
+    comments: PropTypes.array,
   })
 }
 
