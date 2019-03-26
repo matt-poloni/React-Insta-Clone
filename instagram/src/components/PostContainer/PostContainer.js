@@ -15,14 +15,16 @@ const PostContainer = props => {
       <div className="post-img">
         <img src={post.imageUrl} alt='' />
       </div>
-      <div className="post-interact">
-        <div className="icon-wrap">
-          <i className="far fa-heart"></i>
-          <i className="far fa-comment fa-flip-horizontal"></i>
+      <div className="post-bottom">
+        <div className="post-interact">
+          <div className="icon-wrap">
+            <i className="far fa-heart"></i>
+            <i className="far fa-comment fa-flip-horizontal"></i>
+          </div>
+          <p className="like-count">{post.likes} likes</p>
         </div>
-        <span className="like-count">{post.likes} likes</span>
+        <CommentSection id={post.id} timestamp={post.timestamp} comments={post.comments} />
       </div>
-      <CommentSection timestamp={post.timestamp} comments={post.comments} />
     </article>
   )
 }

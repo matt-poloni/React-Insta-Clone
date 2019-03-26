@@ -7,18 +7,18 @@ const SearchBar = props => {
     <header className="wrap-searchbar">
       <div className="logo-ig">
         <i className="fab fa-instagram"></i>
-        <span className="wordmark-ig"> | Instagram</span>
+        <h1 className="wordmark-ig">Instagram</h1>
       </div>
       <div className="search">
         <Form inline>
           <Input type="text" id="searchbar" placeholder="Search" bsSize="lg" />
         </Form>
       </div>
-      <nav className="nav-site">
+      <div className="nav-site">
         <i className="far fa-compass"></i>
         <i className="far fa-heart"></i>
         <i className="far fa-user"></i>
-      </nav>
+      </div>
     </header>
   )
 }

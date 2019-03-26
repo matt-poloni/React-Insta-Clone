@@ -11,10 +11,10 @@ const CommentSection = props => {
 
   return (
     <div className="post-comments">
-      {comments.map(comment =>
+      {comments && comments.map(comment =>
         <Comment key={comment.id} comment={comment} />
       )}
-      <p className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow()}</p>
+      <p className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</p>
       <div className="wrap-add-comment">
         <Form inline>
           <Input type="text" className="add-comment" placeholder="Add a comment..." />
