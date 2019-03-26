@@ -10,6 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       posts: [],
+      search: '',
     }
   }
 
@@ -19,6 +20,22 @@ class App extends Component {
         posts: dummyData,
       });
     }, 2000);
+  }
+
+  handleSearchChanges = e => {
+    this.setState({ search: e.target.value })
+  }
+
+  searchPosts = e => {
+    e.preventDefault();
+
+    this.setState({
+      posts: this.state.posts.map(post => {
+        return !post.username.includes(this.state.search)
+          ? { ...post, filtered: true }
+          : { ...post, filtered: false };
+      })
+    })
   }
 
   updatePostComments = (id, comments) => {
@@ -46,11 +63,12 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
-
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar
+          searchPosts={this.searchPosts}
+          handleSearchChanges={this.handleSearchChanges}
+        />
         <main className="wrap-posts">
           {this.state.posts.length === 0
             ? <Spinner className="load-main" />

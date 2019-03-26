@@ -5,6 +5,10 @@
   margin: 1rem 0;
 }
 
+.post.filtered {
+  display: none;
+}
+
 .post a {
   color: black;
   font-weight: bold;

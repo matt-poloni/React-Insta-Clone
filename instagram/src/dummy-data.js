@@ -10,6 +10,7 @@ const dummyData = [
     userLike: false,
     likes: 400,
     timestamp: "July 17th 2017, 12:42:40 pm",
+    filtered: false,
     comments: [
       {
         id: "1",
@@ -39,6 +40,7 @@ const dummyData = [
     userLike: false,
     likes: 4307,
     timestamp: "July 15th 2017, 03:12:09 pm",
+    filtered: false,
     comments: [
       {
         id: "4",
@@ -77,6 +79,7 @@ const dummyData = [
     userLike: false,
     likes: 5306,
     timestamp: "July 14th 2017, 10:04:08 am",
+    filtered: false,
     comments: [
       {
         id: "9",
