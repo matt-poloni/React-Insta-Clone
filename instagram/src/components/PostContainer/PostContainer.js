@@ -23,7 +23,7 @@ const PostContainer = props => {
           </div>
           <p className="like-count">{post.likes} likes</p>
         </div>
-        <CommentSection id={post.id} timestamp={post.timestamp} comments={post.comments} />
+        <CommentSection postID={post.id} timestamp={post.timestamp} comments={post.comments} />
       </div>
     </article>
   )
