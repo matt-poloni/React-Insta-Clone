@@ -12,6 +12,12 @@ main.wrap-posts {
   max-width: 64rem;
 }
 
+.load-main {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
+}
+
 .test {
   border: 1px solid red;
 }
