@@ -1,0 +1,45 @@
+.wrap-searchbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 2.8rem;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+  z-index: 2;
+}
+
+.flex-searchbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrap-searchbar .logo-ig {
+  font-family: 'Lobster Two', cursive;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.wrap-searchbar .logo-ig i {
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+  border-right: 1px solid lightgray;
+}
+
+.wrap-searchbar .search {
+  display: flex;
+  align-items: center;
+}
+
+.wrap-searchbar .search input {
+  text-align: center;
+  /* background-color: lightgray; */
+}
+
+.wrap-searchbar .nav-site i {
+  margin-left: 1em;
+}

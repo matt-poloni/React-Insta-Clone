@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main.wrap-posts {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  max-width: 60rem;
+}
+
+.test {
+  border: 1px solid red;
+}
+
+i {
+  font-size: 1em;
+  cursor: pointer;
+}
