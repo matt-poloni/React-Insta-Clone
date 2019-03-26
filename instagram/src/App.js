@@ -21,7 +21,18 @@ class App extends Component {
     }, 2000);
   }
 
+  updatePostComments = (id, comments) => {this.setState({
+      posts: this.state.posts.map(post => {
+        return post.id === id ?
+          { ...post, comments: comments } :
+          post;
+      })
+    })
+  }
+
   render() {
+    console.log(this.state.posts);
+
     return (
       <div className="App">
         <SearchBar />
@@ -29,7 +40,11 @@ class App extends Component {
           {this.state.posts.length === 0
             ? <Spinner className="load-main" />
             : this.state.posts.map(post =>
-              <PostContainer key={post.id} post={post} />
+              <PostContainer
+                key={post.id}
+                post={post}
+                updatePostComments={this.updatePostComments}
+              />
           )}
         </main>
       </div>

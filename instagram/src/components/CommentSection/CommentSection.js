@@ -13,10 +13,11 @@ class CommentSection extends React.Component {
       timestamp: props.timestamp,
       comments: props.comments,
       comment: '',
+      updatePostComments: props.updatePostComments,
     }
   }
 
-  onChange = e => {
+  handleChange = e => {
     this.setState({ comment: e.target.value })
   }
 
@@ -28,10 +29,7 @@ class CommentSection extends React.Component {
       text: this.state.comment || 'Strange women lying in ponds distributing swords is no basis for a system of government',
     }
 
-    this.setState({
-      comments: [...this.state.comments, newComment],
-      comment: '',
-    })
+    this.state.updatePostComments(this.state.postID, this.state.comments.push(newComment));
   }
 
   render() {
@@ -53,7 +51,7 @@ class CommentSection extends React.Component {
               type="text"
               value={comment}
               placeholder="Add a comment..."
-              onChange={this.onChange}
+              onChange={this.handleChange}
               className="add-comment"
             />
           </Form>

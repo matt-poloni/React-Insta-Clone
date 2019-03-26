@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 
 const PostContainer = props => {
   const post = props.post;
+  const updatePostComments = props.updatePostComments;
 
   return (
     <article className="post">
@@ -23,7 +24,12 @@ const PostContainer = props => {
           </div>
           <p className="like-count">{post.likes} likes</p>
         </div>
-        <CommentSection postID={post.id} timestamp={post.timestamp} comments={post.comments} />
+        <CommentSection
+          postID={post.id}
+          timestamp={post.timestamp}
+          comments={post.comments}
+          updatePostComments={updatePostComments}
+        />
       </div>
     </article>
   )
