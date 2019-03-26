@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const PostContainer = props => {
   const post = props.post;
   const updatePostComments = props.updatePostComments;
+  const toggleUserLike = props.toggleUserLike;
 
   return (
     <article className="post">
@@ -19,7 +20,16 @@ const PostContainer = props => {
       <div className="post-bottom">
         <div className="post-interact">
           <div className="icon-wrap">
-            <i className="far fa-heart"></i>
+            { post.userLike
+            ? <i
+              className="fas fa-heart"
+              onClick={() => toggleUserLike(post.id, post.userLike)}
+            ></i>
+            : <i
+            className="far fa-heart"
+            onClick={() => toggleUserLike(post.id, post.userLike)}
+          ></i>
+          }
             <i className="far fa-comment fa-flip-horizontal"></i>
           </div>
           <p className="like-count">{post.likes} likes</p>

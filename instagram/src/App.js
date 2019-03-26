@@ -21,11 +21,26 @@ class App extends Component {
     }, 2000);
   }
 
-  updatePostComments = (id, comments) => {this.setState({
+  updatePostComments = (id, comments) => {
+    this.setState({
       posts: this.state.posts.map(post => {
         return post.id === id ?
           { ...post, comments: comments } :
           post;
+      })
+    })
+  }
+
+  toggleUserLike = (id, userLike, e) => {
+    this.setState({
+      posts: this.state.posts.map(post => {
+        return post.id === id
+          ? {
+            ...post,
+            userLike: !post.userLike,
+            likes: userLike ? post.likes-1 : post.likes+1,
+          }
+          : post;
       })
     })
   }
@@ -44,6 +59,7 @@ class App extends Component {
                 key={post.id}
                 post={post}
                 updatePostComments={this.updatePostComments}
+                toggleUserLike={this.toggleUserLike}
               />
           )}
         </main>
