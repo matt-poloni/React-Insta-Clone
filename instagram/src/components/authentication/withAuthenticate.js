@@ -1,9 +1,9 @@
 import React from 'react';
 
-const withAuthenticate = (PassedComponent, props) =>
+const withAuthenticate = PassedComponent =>
   class extends React.Component {
     render() {
-      return <PassedComponent posts={props.posts} />;
+      return <PassedComponent />;
     }
   };
 
