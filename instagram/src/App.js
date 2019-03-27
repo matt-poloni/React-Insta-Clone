@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import PostsPage from './components/PostContainer/PostsPage';
 import LoginPage from './components/Login/LoginPage';
