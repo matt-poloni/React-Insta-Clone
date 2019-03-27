@@ -69,7 +69,7 @@ class PostsPage extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="PostsPage">
         <SearchBar
           searchPosts={this.searchPosts}
           handleSearchChanges={this.handleSearchChanges}
