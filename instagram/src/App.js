@@ -41,9 +41,12 @@ class App extends Component {
   updatePostComments = (id, comments) => {
     this.setState({
       posts: this.state.posts.map(post => {
-        return post.id === id ?
-          { ...post, comments: comments } :
-          post;
+        return post.id === id
+          ? {
+            ...post,
+            comments: comments,
+          }
+          : post;
       })
     })
   }
