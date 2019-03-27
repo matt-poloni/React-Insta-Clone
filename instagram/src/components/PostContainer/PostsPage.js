@@ -74,6 +74,7 @@ class PostsPage extends React.Component {
           searchPosts={this.searchPosts}
           handleSearchChanges={this.handleSearchChanges}
           logout={this.logout}
+          username={this.state.username}
         />
         <main className="wrap-posts">
           {this.state.posts.length === 0
