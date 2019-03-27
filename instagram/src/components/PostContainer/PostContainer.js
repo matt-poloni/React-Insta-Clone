@@ -4,6 +4,7 @@ import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
 
 const PostContainer = props => {
+  const username = props.username;
   const post = props.post;
   const updatePostComments = props.updatePostComments;
   const toggleUserLike = props.toggleUserLike;
@@ -35,6 +36,7 @@ const PostContainer = props => {
           <p className="like-count">{post.likes} likes</p>
         </div>
         <CommentSection
+          username={username}
           postID={post.id}
           timestamp={post.timestamp}
           comments={post.comments}

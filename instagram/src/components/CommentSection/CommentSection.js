@@ -9,6 +9,7 @@ class CommentSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: props.username,
       postID: props.postID,
       timestamp: props.timestamp,
       comments: props.comments,
@@ -25,7 +26,7 @@ class CommentSection extends React.Component {
     e.preventDefault();
     const newComment = {
       id: `${Date.now()}`,
-      username: 'violenceInherentInTheSystem',
+      username: this.state.username,
       text: this.state.comment || 'Strange women lying in ponds distributing swords is no basis for a system of government',
     }
 

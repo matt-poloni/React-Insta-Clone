@@ -23,6 +23,11 @@ class PostsPage extends React.Component {
     }, 500);
   }
 
+  logout = () => {
+    localStorage.removeItem('username',this.state.username);
+    window.location.reload();
+  }
+
   handleSearchChanges = e => {
     this.setState({ search: e.target.value })
   }
@@ -68,6 +73,7 @@ class PostsPage extends React.Component {
         <SearchBar
           searchPosts={this.searchPosts}
           handleSearchChanges={this.handleSearchChanges}
+          logout={this.logout}
         />
         <main className="wrap-posts">
           {this.state.posts.length === 0
@@ -77,6 +83,7 @@ class PostsPage extends React.Component {
               .map(post =>
                 <PostContainer
                   key={post.id}
+                  username={this.state.username}
                   post={post}
                   updatePostComments={this.updatePostComments}
                   toggleUserLike={this.toggleUserLike}
