@@ -41,7 +41,7 @@ class LoginPage extends React.Component {
             onChange={this.handleChanges}
           />
           <Input
-            type="text"
+            type="password"
             name="password"
             value={this.state.password}
             placeholder="Password"

@@ -14,7 +14,7 @@ const SearchBar = props => {
           onSubmit={props.searchPosts}
         >
           <Input
-            type="text"
+            type="search"
             id="searchbar"
             placeholder="Search"
             bsSize="lg"
