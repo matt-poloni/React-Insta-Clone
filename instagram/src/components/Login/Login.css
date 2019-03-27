@@ -1,0 +1,7 @@
+.wrap-login {
+  display: flex;
+}
+
+.wrap-login .login-header {
+  font-family: 'Lobster Two', cursive;
+}
