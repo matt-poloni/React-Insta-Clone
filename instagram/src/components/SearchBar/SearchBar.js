@@ -10,8 +10,16 @@ const SearchBar = props => {
         <h1 className="wordmark-ig">Instagram</h1>
       </div>
       <div className="search">
-        <Form inline>
-          <Input type="text" id="searchbar" placeholder="Search" bsSize="lg" />
+        <Form inline
+          onSubmit={props.searchPosts}
+        >
+          <Input
+            type="text"
+            id="searchbar"
+            placeholder="Search"
+            bsSize="lg"
+            onChange={props.handleSearchChanges}
+          />
         </Form>
       </div>
       <div className="nav-site">

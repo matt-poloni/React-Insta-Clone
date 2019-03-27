@@ -9,7 +9,13 @@ main.wrap-posts {
   display: flex;
   flex-direction: column;
   margin-top: 7rem;
-  max-width: 60rem;
+  max-width: 64rem;
+}
+
+.load-main {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 1rem;
 }
 
 .test {
