@@ -11,6 +11,7 @@ class App extends Component {
     this.state = {
       posts: [],
       search: '',
+      query: '',
     }
   }
 
@@ -30,11 +31,7 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
-      posts: this.state.posts.map(post => {
-        return !post.username.includes(this.state.search)
-          ? { ...post, filtered: true }
-          : { ...post, filtered: false };
-      })
+      query: this.state.search,
     })
   }
 
@@ -75,13 +72,15 @@ class App extends Component {
         <main className="wrap-posts">
           {this.state.posts.length === 0
             ? <Spinner className="load-main" />
-            : this.state.posts.map(post =>
-              <PostContainer
-                key={post.id}
-                post={post}
-                updatePostComments={this.updatePostComments}
-                toggleUserLike={this.toggleUserLike}
-              />
+            : this.state.posts
+              .filter(post => post.username.includes(this.state.query))
+              .map(post =>
+                <PostContainer
+                  key={post.id}
+                  post={post}
+                  updatePostComments={this.updatePostComments}
+                  toggleUserLike={this.toggleUserLike}
+                />
           )}
         </main>
       </div>

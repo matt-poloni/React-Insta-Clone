@@ -28,8 +28,11 @@ class CommentSection extends React.Component {
       username: 'violenceInherentInTheSystem',
       text: this.state.comment || 'Strange women lying in ponds distributing swords is no basis for a system of government',
     }
-    
-    this.setState({ comments: [...this.state.comments, newComment] });
+
+    this.setState({
+      comments: [...this.state.comments, newComment],
+      comment: '',
+    });
     
     this.state.updatePostComments(this.state.postID, this.state.comments);
   }

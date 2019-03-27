@@ -7,10 +7,9 @@ const PostContainer = props => {
   const post = props.post;
   const updatePostComments = props.updatePostComments;
   const toggleUserLike = props.toggleUserLike;
-  const filtered = post.filtered;
 
   return (
-    <article className={`post${filtered ? ' filtered' : ''}`}>
+    <article className={`post`}>
       <div className="post-header">
         <img className="user-thumb" src={post.thumbnailUrl} alt={post.username} />
         <a href="#" className="username">{post.username}</a>
