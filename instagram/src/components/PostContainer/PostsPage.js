@@ -19,7 +19,7 @@ class PostsPage extends React.Component {
       this.setState({
         posts: dummyData,
       });
-    }, 2000);
+    }, 500);
   }
 
   handleSearchChanges = e => {
