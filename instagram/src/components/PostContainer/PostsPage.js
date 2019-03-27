@@ -8,6 +8,7 @@ class PostsPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: localStorage.username,
       posts: [],
       search: '',
       query: '',

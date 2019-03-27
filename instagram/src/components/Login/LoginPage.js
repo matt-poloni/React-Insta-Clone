@@ -2,7 +2,7 @@ import React from 'react';
 import './Login.css';
 import { Form, Input, Button } from 'reactstrap';
 
-class Login extends React.Component {
+class LoginPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,12 @@ class Login extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  login = () => {}
+  login = e => {
+    e.preventDefault();
+    localStorage.setItem('username',this.state.username);
+    this.setState({ password: '' });
+    window.location.reload();
+  }
 
   render() {
     return (
@@ -25,11 +30,12 @@ class Login extends React.Component {
         </header>
         <Form
           className="login-form"
-          onSubmit={this.submitLogin}
+          onSubmit={this.login}
         >
           <Input
             type="text"
             name="username"
+            value={this.state.username}
             placeholder="Username"
             bsSize="lg"
             onChange={this.handleChanges}
@@ -37,15 +43,16 @@ class Login extends React.Component {
           <Input
             type="text"
             name="password"
-            placeholder="Username"
+            value={this.state.password}
+            placeholder="Password"
             bsSize="lg"
             onChange={this.handleChanges}
           />
-          <Button type="submit">Login</Button>
+          <Button type="submit" color="primary" size="lg" block>Login</Button>
         </Form>
       </div>
     )
   }
 }
 
-export default Login;
+export default LoginPage;
