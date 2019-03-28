@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-// import './SearchBar.css';
 import { Form, Input } from 'reactstrap';
 
 const Header = styled.header`

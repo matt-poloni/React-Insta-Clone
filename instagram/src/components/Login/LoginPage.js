@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import './Login.css';
 import { Form, Input, Button } from 'reactstrap';
 
 const WrapLogin = styled.div`

@@ -1,9 +1,34 @@
 import React from 'react';
-import './CommentSection.css';
+import styled, { css } from 'styled-components';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
 import { Form, Input } from 'reactstrap';
 import moment from 'moment';
+
+const WrapComments = styled.div`
+  width: 100%;
+
+  .comment-user {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  
+  .post-time {
+    font-size: 0.75em;
+  }
+  
+  .wrap-add-comment {
+    margin-top: 1.25em;
+    padding-top: 1em;
+    border-top: 1px solid lightgray;
+  }
+  
+  .add-comment {
+    width: 100%;
+    border: 0;
+    font-size: 1.4rem;
+  }
+`
 
 class CommentSection extends React.Component {
   constructor(props) {
@@ -44,7 +69,7 @@ class CommentSection extends React.Component {
     const comment = this.state.comment;
 
     return (
-      <div className="post-comments">
+      <WrapComments>
         {comments && comments.map(comment =>
           <Comment key={comment.id} comment={comment} />
         )}
@@ -62,7 +87,7 @@ class CommentSection extends React.Component {
             />
           </Form>
         </div>
-      </div>
+      </WrapComments>
     );
   }
 }
