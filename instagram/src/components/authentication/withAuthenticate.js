@@ -10,7 +10,7 @@ const withAuthenticate = FirstComponent => SecondComponent =>
     }
 
     componentDidMount() {
-      localStorage.username && this.setState({ loggedIn: true });
+      localStorage.getItem('username') && this.setState({ loggedIn: true });
     }
 
     render() {

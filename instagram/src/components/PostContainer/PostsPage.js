@@ -1,8 +1,13 @@
 import React from 'react';
+import styled, { css } from 'styled-components';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import { Spinner } from 'reactstrap';
 import dummyData from '../../dummy-data';
+
+const WrapPostsPage = styled.div`
+
+`
 
 class PostsPage extends React.Component {
   constructor(props) {
@@ -60,7 +65,9 @@ class PostsPage extends React.Component {
           ? {
             ...post,
             userLike: !post.userLike,
-            likes: userLike ? post.likes-1 : post.likes+1,
+            likes: userLike
+              ? post.likes-1
+              : post.likes+1,
           }
           : post;
       })
