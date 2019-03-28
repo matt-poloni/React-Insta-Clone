@@ -1,10 +1,57 @@
 import React from 'react';
-import './SearchBar.css';
+import styled, { css } from 'styled-components';
+// import './SearchBar.css';
 import { Form, Input } from 'reactstrap';
+
+const Header = styled.header`
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 2.4rem;
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  background-color: white;
+  z-index: 2;
+
+  .flex-searchbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-ig {
+    font-family: 'Lobster Two', cursive;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .logo-ig i {
+    margin-right: 0.5em;
+    padding-right: 0.5em;
+    border-right: 1px solid lightgray;
+  }
+  
+  .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search input {
+    text-align: center;
+    background-color: #FAFAFA;
+  }
+  
+  .nav-site i {
+    margin-left: 1em;
+  }
+`
 
 const SearchBar = props => {
   return (
-    <header className="wrap-searchbar">
+    <Header>
       <div className="logo-ig">
         <i className="fab fa-instagram"></i>
         <h1 className="wordmark-ig">Instagram</h1>
@@ -31,7 +78,7 @@ const SearchBar = props => {
           title={props.username}
         ></i>
       </div>
-    </header>
+    </Header>
   )
 }
 
