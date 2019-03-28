@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Form, Input, Button } from 'reactstrap';
 
 const WrapLogin = styled.div`
   display: flex;
@@ -12,21 +11,31 @@ const WrapLogin = styled.div`
   border-radius: 0.5rem;
   margin: 1rem 0;
   padding: 4rem;
+`
 
-  .login-header {
-    font-family: 'Lobster Two', cursive;
-    font-size: 4rem;
-    margin-bottom: 3rem;
-  }
-  
-  .login-form input {
-    background-color: #FAFAFA;
-    margin-top: 1rem;
-  }
-  
-  .login-form button {
-    margin-top: 2rem;
-  }
+const WrapLoginHeader = styled.header`margin-bottom: 3rem`
+
+const LoginHeader = styled.h1`
+  font-family: 'Lobster Two', cursive;
+  font-size: 4rem;
+`
+
+const LoginInput = styled.input`
+  text-align: center;
+  background-color: #FAFAFA;
+  border: 1px solid lightgrey;
+  width: 100%;
+  margin-top: 1rem;
+`
+
+const LoginButton = styled.button`
+  background-color: #3897F0;
+  color: white;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.25em;
+  margin-top: 2rem;
+  width: 100%;
 `
 
 class LoginPage extends React.Component {
@@ -52,14 +61,14 @@ class LoginPage extends React.Component {
   render() {
     return (
       <WrapLogin>
-        <header className="wrap-login-header">
-          <h1 className="login-header">Instagram</h1>
-        </header>
-        <Form
+        <WrapLoginHeader className="wrap-login-header">
+          <LoginHeader>Instagram</LoginHeader>
+        </WrapLoginHeader>
+        <form
           className="login-form"
           onSubmit={this.login}
         >
-          <Input
+          <LoginInput
             type="text"
             name="username"
             value={this.state.username}
@@ -67,7 +76,7 @@ class LoginPage extends React.Component {
             bsSize="lg"
             onChange={this.handleChanges}
           />
-          <Input
+          <LoginInput
             type="password"
             name="password"
             value={this.state.password}
@@ -75,8 +84,8 @@ class LoginPage extends React.Component {
             bsSize="lg"
             onChange={this.handleChanges}
           />
-          <Button type="submit" color="primary" size="lg" block>Login</Button>
-        </Form>
+          <LoginButton type="submit">Login</LoginButton>
+        </form>
       </WrapLogin>
     )
   }

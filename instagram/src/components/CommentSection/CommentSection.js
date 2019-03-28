@@ -63,7 +63,12 @@ class CommentSection extends React.Component {
         {comments && comments.map(comment =>
           <Comment key={comment.id} comment={comment} />
         )}
-        <PostTime className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</PostTime>
+        <PostTime
+          className="post-time"
+          title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}
+        >
+          {moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}
+        </PostTime>
         <WrapAddComment
           onSubmit={this.addNewComment}
         >
