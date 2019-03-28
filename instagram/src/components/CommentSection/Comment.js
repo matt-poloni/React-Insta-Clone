@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Username } from '../PostContainer/PostContainer';
 
 const Comment = props => {
   const comment = props.comment;
 
   return (
     <p>
-      <a href="#" className="comment-user">{comment.username}</a>
+      <Username type='inline' href="#">{comment.username}</Username>
       {comment.text}
     </p>
   )

@@ -1,16 +1,15 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
-import { Form, Input } from 'reactstrap';
+// import { Form, Input } from 'reactstrap';
 import moment from 'moment';
 
 const WrapComments = styled.div`
   width: 100%;
 
   .comment-user {
-    display: inline-block;
-    margin-right: 0.5em;
+    
   }
   
   .post-time {
@@ -75,17 +74,17 @@ class CommentSection extends React.Component {
         )}
         <p className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</p>
         <div className="wrap-add-comment">
-          <Form inline
+          <form inline
             onSubmit={this.addNewComment}
           >
-            <Input
+            <input
               type="text"
               value={comment}
               placeholder="Add a comment..."
               onChange={this.handleChange}
               className="add-comment"
             />
-          </Form>
+          </form>
         </div>
       </WrapComments>
     );
