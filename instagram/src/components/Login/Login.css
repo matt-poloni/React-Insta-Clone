@@ -1,26 +1,3 @@
 .wrap-login {
-  display: flex;
-  flex-direction: column;
-  justify-self: center;
-  width: 35rem;
-  background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 4rem;
-}
-
-.wrap-login .login-header {
-  font-family: 'Lobster Two', cursive;
-  font-size: 4rem;
-  margin-bottom: 3rem;
-}
-
-.wrap-login .login-form input {
-  background-color: #FAFAFA;
-  margin-top: 1rem;
-}
-
-.wrap-login .login-form button {
-  margin-top: 2rem;
+  
 }
