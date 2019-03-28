@@ -30,7 +30,7 @@ export const Username = styled.a`
   }
 
   ${props =>
-    props.type === 'inline' &&
+    props.inline &&
     css`
       display: inline-block;
       margin-right: 0.5em;

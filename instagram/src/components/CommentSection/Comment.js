@@ -7,7 +7,7 @@ const Comment = props => {
 
   return (
     <p>
-      <Username type='inline' href="#">{comment.username}</Username>
+      <Username inline href="#">{comment.username}</Username>
       {comment.text}
     </p>
   )
