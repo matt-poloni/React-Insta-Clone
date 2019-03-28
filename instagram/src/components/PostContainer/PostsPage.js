@@ -12,19 +12,19 @@ const WrapPostsPage = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
-  main.wrap-posts {
-    display: flex;
-    flex-direction: column;
-    margin-top: 7rem;
-    max-width: 64rem;
-  }
   
   .load-main {
     width: 5rem;
     height: 5rem;
     margin-top: 1rem;
   }
+`
+
+const WrapPosts = styled.main`
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  max-width: 64rem;
 `
 
 class PostsPage extends React.Component {
@@ -101,7 +101,7 @@ class PostsPage extends React.Component {
           logout={this.logout}
           username={this.state.username}
         />
-        <main className="wrap-posts">
+        <WrapPosts>
           {this.state.posts.length === 0
             ? <Spinner className="load-main" />
             : this.state.posts
@@ -115,7 +115,7 @@ class PostsPage extends React.Component {
                   toggleUserLike={this.toggleUserLike}
                 />
           )}
-        </main>
+        </WrapPosts>
       </WrapPostsPage>
     );
   }

@@ -5,7 +5,7 @@ const WrapLogin = styled.div`
   display: flex;
   flex-direction: column;
   justify-self: center;
-  width: 35rem;
+  max-width: 35rem;
   background-color: white;
   border: 1px solid lightgray;
   border-radius: 0.5rem;
