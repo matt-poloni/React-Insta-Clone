@@ -2,31 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 import Comment from './Comment';
 import PropTypes from 'prop-types';
-// import { Form, Input } from 'reactstrap';
 import moment from 'moment';
 
-const WrapComments = styled.div`
-  width: 100%;
+const WrapComments = styled.div`width: 100%`
 
-  .comment-user {
-    
-  }
-  
-  .post-time {
-    font-size: 0.75em;
-  }
-  
-  .wrap-add-comment {
-    margin-top: 1.25em;
-    padding-top: 1em;
-    border-top: 1px solid lightgray;
-  }
-  
-  .add-comment {
-    width: 100%;
-    border: 0;
-    font-size: 1.4rem;
-  }
+const PostTime = styled.p`font-size: 0.75em`
+
+const WrapAddComment = styled.form`
+  margin-top: 1.25em;
+  padding-top: 1em;
+  border-top: 1px solid lightgray;
+`
+
+const AddComment = styled.input`
+  width: 100%;
+  border: 0;
+  font-size: 1.4rem;
 `
 
 class CommentSection extends React.Component {
@@ -72,20 +63,18 @@ class CommentSection extends React.Component {
         {comments && comments.map(comment =>
           <Comment key={comment.id} comment={comment} />
         )}
-        <p className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</p>
-        <div className="wrap-add-comment">
-          <form inline
-            onSubmit={this.addNewComment}
-          >
-            <input
-              type="text"
-              value={comment}
-              placeholder="Add a comment..."
-              onChange={this.handleChange}
-              className="add-comment"
-            />
-          </form>
-        </div>
+        <PostTime className="post-time" title={moment(timestamp,'MMMM Do YYYY, h:mm:ss a').format('MMMM Do YYYY, h:mm a')}>{moment(timestamp,'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</PostTime>
+        <WrapAddComment
+          onSubmit={this.addNewComment}
+        >
+          <AddComment
+            type="text"
+            value={comment}
+            placeholder="Add a comment..."
+            onChange={this.handleChange}
+            className="add-comment"
+          />
+        </WrapAddComment>
       </WrapComments>
     );
   }
