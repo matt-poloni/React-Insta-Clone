@@ -53,7 +53,7 @@ const SearchBar = props => {
         onSubmit={props.searchPosts}
       >
         <SearchInput
-          type="search"
+          type="text"
           id="searchbar"
           placeholder="Search"
           onChange={props.handleSearchChanges}

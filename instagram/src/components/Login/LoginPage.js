@@ -25,6 +25,7 @@ const LoginInput = styled.input`
   background-color: #FAFAFA;
   border: 1px solid lightgrey;
   width: 100%;
+  padding: 0.25em;
   margin-top: 1rem;
 `
 
@@ -36,6 +37,10 @@ const LoginButton = styled.button`
   padding: 0.25em;
   margin-top: 2rem;
   width: 100%;
+
+  &:hover {
+    background-color: #338ADB;
+  }
 `
 
 class LoginPage extends React.Component {
