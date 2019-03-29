@@ -1,8 +1,31 @@
 import React from 'react';
+import styled from 'styled-components';
 import SearchBar from '../SearchBar/SearchBar';
 import PostContainer from './PostContainer';
 import { Spinner } from 'reactstrap';
 import dummyData from '../../dummy-data';
+
+const WrapPostsPage = styled.div`
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  
+  .load-main {
+    width: 5rem;
+    height: 5rem;
+    margin-top: 1rem;
+  }
+`
+
+const WrapPosts = styled.main`
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+  max-width: 64rem;
+`
 
 class PostsPage extends React.Component {
   constructor(props) {
@@ -60,7 +83,9 @@ class PostsPage extends React.Component {
           ? {
             ...post,
             userLike: !post.userLike,
-            likes: userLike ? post.likes-1 : post.likes+1,
+            likes: userLike
+              ? post.likes-1
+              : post.likes+1,
           }
           : post;
       })
@@ -69,14 +94,14 @@ class PostsPage extends React.Component {
 
   render() {
     return (
-      <div className="PostsPage">
+      <WrapPostsPage>
         <SearchBar
           searchPosts={this.searchPosts}
           handleSearchChanges={this.handleSearchChanges}
           logout={this.logout}
           username={this.state.username}
         />
-        <main className="wrap-posts">
+        <WrapPosts>
           {this.state.posts.length === 0
             ? <Spinner className="load-main" />
             : this.state.posts
@@ -90,8 +115,8 @@ class PostsPage extends React.Component {
                   toggleUserLike={this.toggleUserLike}
                 />
           )}
-        </main>
-      </div>
+        </WrapPosts>
+      </WrapPostsPage>
     );
   }
 }

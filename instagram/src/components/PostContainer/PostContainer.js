@@ -1,7 +1,62 @@
 import React from 'react';
-import './PostContainer.css';
+import styled, { css } from 'styled-components';
 import CommentSection from '../CommentSection/CommentSection';
 import PropTypes from 'prop-types';
+
+const PostArticle = styled.article`
+  text-align: left;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+`
+
+const PostHeader = styled.div`padding: 1em`
+
+const UserThumbnail = styled.img`
+  width: 2em;
+  height: auto;
+  border-radius: 50%;
+  margin-right: 1em;
+`
+
+export const Username = styled.a`
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+  }
+
+  ${props =>
+    props.inline &&
+    css`
+      display: inline-block;
+      margin-right: 0.5em;
+    `}
+`;
+
+const PostImg = styled.img`
+width: 100%;
+height: auto;
+`
+
+const PostBottom = styled.div`padding: 1em;`
+
+const PostInteract = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  i {
+    font-size: 1.5em;
+    margin-right: 0.5em;
+  }
+
+  .fas.fa-heart {
+    color: red;
+  }
+`
 
 const PostContainer = props => {
   const username = props.username;
@@ -10,21 +65,19 @@ const PostContainer = props => {
   const toggleUserLike = props.toggleUserLike;
 
   return (
-    <article className={`post`}>
-      <div className="post-header">
-        <img className="user-thumb" src={post.thumbnailUrl} alt={post.username} />
-        <a href="#" className="username">{post.username}</a>
-      </div>
-      <div className="post-img">
-        <img src={post.imageUrl} alt='' />
-      </div>
-      <div className="post-bottom">
-        <div className="post-interact">
+    <PostArticle>
+      <PostHeader>
+        <UserThumbnail src={post.thumbnailUrl} alt={post.username} />
+        <Username href="#">{post.username}</Username>
+      </PostHeader>
+      <PostImg src={post.imageUrl} alt='' />
+      <PostBottom>
+        <PostInteract>
           <div className="icon-wrap">
             { post.userLike
             ? <i
-              className="fas fa-heart"
-              onClick={() => toggleUserLike(post.id, post.userLike)}
+            className="fas fa-heart"
+            onClick={() => toggleUserLike(post.id, post.userLike)}
             ></i>
             : <i
             className="far fa-heart"
@@ -34,7 +87,7 @@ const PostContainer = props => {
             <i className="far fa-comment fa-flip-horizontal"></i>
           </div>
           <p className="like-count">{post.likes} likes</p>
-        </div>
+        </PostInteract>
         <CommentSection
           username={username}
           postID={post.id}
@@ -42,8 +95,8 @@ const PostContainer = props => {
           comments={post.comments}
           updatePostComments={updatePostComments}
         />
-      </div>
-    </article>
+      </PostBottom>
+    </PostArticle>
   )
 }
 
